@@ -1,0 +1,66 @@
+ステップ 1: Laravelプロジェクトの作成
+コマンドプロンプトまたはターミナルを開きます。
+Windowsでは「cmd」、Macでは「Terminal」を開きます。
+
+新しいLaravelプロジェクトを作成します。
+次のコマンドを入力して、Laravel 9のプロジェクトを作成します。ここではプロジェクト名をnew-projectとしていますが、任意の名前に置き換えてください。
+
+bash
+コードをコピーする
+composer create-project laravel/laravel new-project "9.*"
+作成したプロジェクトディレクトリに移動します。
+次のコマンドで新しく作成したプロジェクトのディレクトリに移動します。
+
+bash
+コードをコピーする
+cd new-project
+ステップ 2: Laravel Breeze のインストール
+Laravel Breezeをプロジェクトに追加します。
+Breezeをインストールするには、以下のコマンドを実行します。
+
+bash
+コードをコピーする
+composer require laravel/breeze --dev
+Breezeのスキャフォルディングをインストールします。
+Breezeの基本的な認証機能をプロジェクトに導入するには、次のコマンドを実行します。
+
+bash
+コードをコピーする
+php artisan breeze:install
+ステップ 3: Node.jsとNPMのセットアップ
+Node.jsをインストールします。
+Node.jsがまだインストールされていない場合は、Node.jsの公式サイトからインストーラーをダウンロードしてインストールします。これにはNPM（Node Package Manager）も含まれています。
+
+依存関係のインストールとビルド
+Breezeで使用されるTailwind CSSを含むフロントエンドの依存関係をインストールし、アセットをコンパイルするために次のコマンドを実行します。
+
+bash
+コードをコピーする
+npm install
+npm run dev
+ステップ 4: データベースの設定
+データベースを作成します。
+使用しているデータベースシステム（MySQL, PostgreSQL, SQLiteなど）で新しいデータベースを作成します。データベース名は任意です。
+
+.envファイルを設定します。
+プロジェクトのルートにある.envファイルを開き、データベース設定を更新します。例えば、MySQLを使用している場合は次のようになります。
+
+plaintext
+コードをコピーする
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+ステップ 5: アプリケーションの起動
+Laravelの開発サーバーを起動します。
+以下のコマンドでLaravelの開発サーバーを起動します。
+
+bash
+コードをコピーする
+php artisan serve
+ブラウザでアプリケーションにアクセスします。
+ブラウザを開き、表示されたアドレス（通常は http://127.0.0.1:8000）にアクセスします。ログイン画面が表示されれば、セットアップは成功です。
+
+以上で、Laravel Breezeを使用した認証機能が含まれるLaravelプロジェクトのセットアップが完了しました。
